@@ -38,7 +38,9 @@ def main():
 	x = 0
 	cromo = {}
 	for line in sys.stdin:
-		cromo[x] = line[:-2] # O -2 é pra tirar o \r\n da string
+		if line[-1] == '\n':
+			line = line[:-2]
+		cromo[x] = line # O -2 é pra tirar o \r\n da string
 		x += 1
 
 	size = len(cromo)
