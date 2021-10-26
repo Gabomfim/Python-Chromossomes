@@ -28,7 +28,7 @@ def topologicalSort(graph, size):
 def monta_dna(v, visited, trecho, graph, cromos, dnas):
 	visited[v] = True
 	if len(graph[v]) == 0:
-		return dnas + [trecho]
+		return [trecho]
 	for neighboor, init in graph[v]:
 		novo_trecho = trecho + cromos[neighboor][init:]
 		dnas = dnas + monta_dna(neighboor, visited, novo_trecho, graph, cromos, dnas)
@@ -64,6 +64,7 @@ def main():
 	for i in order:
 		if not visited[i]:
 			dna = dna + monta_dna(i, visited, cromo[i], graph, cromo, [])
+	print(dna)
 	dna.sort(key=len)
 	print(dna)
 
