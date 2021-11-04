@@ -1,3 +1,9 @@
+# Projeto 3 MC346
+# Desenvolvido por:
+# Felipe Arruda 196862
+# Renata Lellis 205320
+# Gabriel Silveira 197244
+
 import sys
 import numpy as np
 
