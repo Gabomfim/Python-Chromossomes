@@ -5,7 +5,6 @@
 # Gabriel Silveira 197244
 
 import sys
-import numpy as np
 
 def identifica_substring(string1, string2):
 	for i in range(len(string1)):
@@ -24,7 +23,7 @@ def topologicalUtil(v, visited, stack, graph):
 
 def topologicalSort(graph, size):
 	stack = []
-	visited = np.zeros(size, dtype=bool)
+	visited = [0]*size
 	for i in range(size):
 		if not visited[i]:
 			topologicalUtil(i, visited, stack, graph)
@@ -66,7 +65,7 @@ def main():
 
 
 	dna = []
-	visited = np.zeros(size, dtype=bool)
+	visited = [0]*size
 	for i in order:
 		if not visited[i]:
 			dna = dna + monta_dna(i, visited, cromo[i], graph, cromo, [])
